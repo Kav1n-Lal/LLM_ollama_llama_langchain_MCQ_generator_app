@@ -32,7 +32,7 @@ def load_pdf_and_create_vector_store(pdf_file):
         
             
         pdfs = []
-        for root, dirs, files in os.walk(r"C:\Users\Kavin\Desktop\New folder"):
+        for root, dirs, files in os.walk(r"C:\Users\Kavin\Desktop\final_MCQ"):
             # print(root, dirs, files)
             for file in files:
                 if file.endswith(".pdf"):
@@ -69,16 +69,7 @@ def load_pdf_and_create_vector_store(pdf_file):
         vector_store.save_local(DB_FAISS_PATH)
         st.success('documents added to vector store')
 
-         # moving the uploaded files to a folder named "data"
-        try:
-            SOURCE_DIR = 'C:/Users/Kavin/Desktop/New folder'
-            DEST_DIR = 'C:/Users/Kavin/Desktop/New folder/data'
 
-            for fname in os.listdir(SOURCE_DIR):
-                if fname.lower().endswith('.pdf'):
-                    shutil.move(os.path.join(SOURCE_DIR, fname), DEST_DIR)
-        except:
-               pass
  
         st.session_state['vector_store'] = vector_store  # Store the vector store in session state
 
@@ -88,7 +79,7 @@ def generate_text_from_llm(topic):
 
         #Loading the saved embeddings from the vectorstore
         embeddings = OllamaEmbeddings(model='nomic-embed-text', base_url='http://localhost:11434')
-        db_name = r"C:\Users\Kavin\Desktop\New folder\vectorstore\faiss_cbse_text_db"
+        db_name = r"C:\Users\Kavin\Desktop\final_MCQ\vectorstore\faiss_cbse_text_db"
         vector_store = FAISS.load_local(db_name, embeddings, allow_dangerous_deserialization=True)
 
         #Creating the prompt template for MCQ generation(Few Shot Prompting)
