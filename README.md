@@ -33,7 +33,7 @@ The **MCQ Generator App** is a MCQ generator app powered by a fine-tuned large l
 ### Download the Ollama and llama3.2:1b Model:
 
 - Download Ollama for Windows and install it-[https://ollama.com/download]
-- On the command prompt type:
+- **On the command prompt type**:
 - **ollama** to see whether it is running.
 - Then type **ollama serve**, to view the localhost id.
 - Now type **ollama run llama3.2:1b** and **ollama pull nomic-embed-text** to pull the the LLM and the embeddings respectively.
@@ -43,7 +43,7 @@ The **MCQ Generator App** is a MCQ generator app powered by a fine-tuned large l
 
 1. **Run the Application:**
    ```bash
-   streamlit run app.py
+   streamlit run final_mcq_app.py
    ```
 2. **Access the Application:**
    - Once the application is running, access it through the provided URL.
@@ -54,7 +54,7 @@ The **MCQ Generator App** is a MCQ generator app powered by a fine-tuned large l
 - **Hardware:** Operates on CPU; no GPU required.
 
 ## 🤖 How to Use
-- Copy the cloned repository path and on lines 35 and 87 in final_mcq_app.py the **file paths of the cloned folder and the vectorstore**  before running the code.
-- Upon running the application, you'll be presented with a box to upload your pdf file, after successfull storing of the text into the vector database, enter the topic from the pdf file to generate MCQs.
+- Copy the cloned repository path and on lines 35 and 87 in final_mcq_app.py enter the **file paths of the cloned folder and the vectorstore**  before running the code.
+- Upon running the application, you'll be presented with a box to upload your pdf file, upload the file and after successfull storing of the text into the vector database, enter the topic from the pdf file to generate MCQs.
 - After successfull MCQ generation, check the generated MCQs and click on the **Download generated MCQs** button to download the MCQs as **.txt** file.
 
