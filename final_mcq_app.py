@@ -11,12 +11,8 @@ from langchain_core.prompts import ChatPromptTemplate
 
 
 import streamlit as st
-
-import pandas as pd
-from io import StringIO
 from langchain_community.document_loaders import PyMuPDFLoader
 import os
-import shutil
 
 # Check and initialize session state variables if they don't exist
 if 'vector_store' not in st.session_state:
@@ -84,7 +80,7 @@ def generate_text_from_llm(topic):
 
         #Loading the saved embeddings from the vectorstore
         embeddings = OllamaEmbeddings(model='nomic-embed-text', base_url='http://localhost:11434')
-        db_name = r"C:\Users\Kavin\Desktop\final_MCQ\vectorstore\faiss_cbse_text_db"  # Specify the path of the vectorstore db
+        db_name = r"C:\Users\Kavin\Desktop\final_MCQ\vectorstore\faiss_pdf_text_db"  # Specify the path of the vectorstore db
         vector_store = FAISS.load_local(db_name, embeddings, allow_dangerous_deserialization=True)
 
         #Creating the prompt template for MCQ generation(Few Shot Prompting)
