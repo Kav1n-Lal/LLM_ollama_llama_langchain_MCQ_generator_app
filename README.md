@@ -36,7 +36,8 @@ The **MCQ Generator App** is a MCQ generator app powered by a fine-tuned large l
 - **On the command prompt type**:
 - **ollama** to see whether it is running.
 - Then type **ollama serve**, to view the localhost id.
-- Now type **ollama run llama3.2:1b** and **ollama pull nomic-embed-text** to pull the the LLM and the embeddings respectively.
+- Now type **ollama run llama3.2:1b** to pull the LLM. You can use it like **chatGPT** on the terminal itself. To quit type **/bye**.
+- Then type **ollama pull nomic-embed-text** to pull the embeddings respectively.
 - **ollama list** to check whether the LLM and the embedding is pulled successfully. It displays the information.
 
 ## 📝 Usage
