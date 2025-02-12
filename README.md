@@ -12,7 +12,7 @@ The **MCQ Generator App** is a MCQ generator app powered by a fine-tuned large l
 
 ## 🚀 Features
 
-- **MCQ Generation:** Runs locally and llows users to generate MCQs based on PDF data.
+- **MCQ Generation:** Runs locally and allows users to generate MCQs based on PDF data.
 - **Download:** Can download the generated MCQs as **.txt** file.
 
 ## Development Specs
@@ -49,8 +49,9 @@ The **MCQ Generator App** is a MCQ generator app powered by a fine-tuned large l
    - Once the application is running, access it through the provided URL.
      
 ## System Requirements
-- **CPU:** 12th Gen Intel(R) Core(TM) i5.
-- **RAM:** 32 GB.
+- **CPU:** Intel® Core™ i5 or equivalent.
+- **RAM:** 8 GB.
+- **Disk Space:** 7 GB.
 - **Hardware:** Operates on CPU; no GPU required.
 
 ## 🤖 How to Use
