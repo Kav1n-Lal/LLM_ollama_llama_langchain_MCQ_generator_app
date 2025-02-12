@@ -8,7 +8,7 @@ from langchain_ollama import ChatOllama
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough 
 from langchain_core.prompts import ChatPromptTemplate
-from langchain import hub
+
 
 import streamlit as st
 
@@ -32,7 +32,7 @@ def load_pdf_and_create_vector_store(pdf_file):
         
             
         pdfs = []
-        for root, dirs, files in os.walk(r"C:\Users\Kavin\Desktop\final_MCQ"):
+        for root, dirs, files in os.walk(r"C:\Users\Kavin\Desktop\final_MCQ"): # On the desktop, create a folder named 'final_MCQ' and specify its path
             # print(root, dirs, files)
             for file in files:
                 if file.endswith(".pdf"):
@@ -47,30 +47,35 @@ def load_pdf_and_create_vector_store(pdf_file):
             docs.extend(temp)
 
         #Splitting the text
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=100)
+        text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
         chunks = text_splitter.split_documents(docs)
 
         # Using the "nomic-embed-text" from Ollama to create embeddings
         embeddings = OllamaEmbeddings(model='nomic-embed-text', base_url='http://localhost:11434')
 
-
+        # Specifying the embedding size
         vector = embeddings.embed_query("Hello World")
         
+        # Creating the indexes
         index = faiss.IndexFlatL2(len(vector))
         
         vector_store = FAISS(
         embedding_function=embeddings,
             index=index,
-            docstore=InMemoryDocstore(),
-            index_to_docstore_id={},)
+            docstore=InMemoryDocstore(), # storing the vector on the RAM
+            index_to_docstore_id={},)    # to store the document chunks with index ids
 
-        # vectorestore folder path
-        DB_FAISS_PATH = "vectorstore/faiss_cbse_text_db"
+        # Adding the document chunks to the vector store(Faiss DB)
+        ids=vector_store.add_documents(chunks)
+
+        # Vectorestore folder path
+        DB_FAISS_PATH = "vectorstore/faiss_pdf_text_db"
+
+        # Saving the vectorstore embeddings locally
         vector_store.save_local(DB_FAISS_PATH)
         st.success('documents added to vector store')
-
-
- 
+        #st.write(ids)
+        
         st.session_state['vector_store'] = vector_store  # Store the vector store in session state
 
 def generate_text_from_llm(topic):
@@ -79,7 +84,7 @@ def generate_text_from_llm(topic):
 
         #Loading the saved embeddings from the vectorstore
         embeddings = OllamaEmbeddings(model='nomic-embed-text', base_url='http://localhost:11434')
-        db_name = r"C:\Users\Kavin\Desktop\final_MCQ\vectorstore\faiss_cbse_text_db"
+        db_name = r"C:\Users\Kavin\Desktop\final_MCQ\vectorstore\faiss_cbse_text_db"  # Specify the path of the vectorstore db
         vector_store = FAISS.load_local(db_name, embeddings, allow_dangerous_deserialization=True)
 
         #Creating the prompt template for MCQ generation(Few Shot Prompting)
@@ -194,10 +199,10 @@ def generate_text_from_llm(topic):
         llm = ChatOllama(model='llama3.2:1b', base_url='http://localhost:11434')
 
         #Retrieving the relevant documents from the vector database based on user question
-        retriever = vector_store.as_retriever(search_type = 'mmr', 
-                                            search_kwargs = {'k': 5, 
-                                                            'fetch_k': 20, 
-                                                            'lambda_mult': 1})
+        retriever = vector_store.as_retriever(search_type = 'mmr', # maximum marginal relevance
+                                            search_kwargs = {'k': 5, # No of documents to be returned
+                                                            'fetch_k': 20, # Total no of documents to be used for the mmr algorithm to find the relevant documents 
+                                                            'lambda_mult': 1}) # 0-max diversity,1-minimum diversity(factual)
         docs = retriever.invoke(topic)
 
         def format_docs(docs):
