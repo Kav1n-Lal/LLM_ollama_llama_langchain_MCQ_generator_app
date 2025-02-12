@@ -58,3 +58,9 @@ The **MCQ Generator App** is a MCQ generator app powered by a fine-tuned large l
 - Upon running the application, you'll be presented with a box to upload your pdf file, upload the file and after successfull storing of the text into the vector database, enter the topic from the pdf file to generate MCQs.
 - After successfull MCQ generation, check the generated MCQs and click on the **Download generated MCQs** button to download the MCQs as **.txt** file.
 
+## 📷 Screenshots
+![Screenshot (17)](https://github.com/user-attachments/assets/ca70741c-220a-4198-b84c-e44fbb3a13a9)
+![Screenshot (18)](https://github.com/user-attachments/assets/ff4aba9e-90c9-4c02-a21b-54fb6192d42a)
+![Screenshot (19)](https://github.com/user-attachments/assets/6d2ec6c9-6eb8-4f7b-8134-b8e27913ca77)
+![Screenshot (20)](https://github.com/user-attachments/assets/4cd25684-a475-467f-8854-6eb9ad700b25)
+
