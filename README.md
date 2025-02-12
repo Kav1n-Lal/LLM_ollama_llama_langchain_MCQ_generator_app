@@ -13,10 +13,10 @@ The **MCQ Generator App** is a MCQ generator app powered by a fine-tuned large l
 ## 🚀 Features
 
 - **MCQ Generation:** Runs locally and llows users to generate MCQs based on PDF data.
-- **Download:** Can download the generated MCQs as **.txt**" file.
+- **Download:** Can download the generated MCQs as **.txt** file.
 
 ## Development Specs
-- Utilizes [llama3.2:1b-(https://ollama.com/library/llama3.2:1b)and [embeddings](https://ollama.com/library/nomic-embed-text)) for robust functionality.
+- Utilizes [llama3.2:1b](https://ollama.com/library/llama3.2:1b) and [embeddings](https://ollama.com/library/nomic-embed-text) for robust functionality.
 - Developed using [Langchain](https://github.com/langchain-ai/langchain) and [Streamlit](https://github.com/streamlit/streamlit) technologies for enhanced performance.
 
 
@@ -47,7 +47,7 @@ The **MCQ Generator App** is a MCQ generator app powered by a fine-tuned large l
    ```
 2. **Access the Application:**
    - Once the application is running, access it through the provided URL.
-   - 
+     
 ## System Requirements
 - **CPU:** 12th Gen Intel(R) Core(TM) i5.
 - **RAM:** 32 GB.
