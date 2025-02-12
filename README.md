@@ -61,10 +61,10 @@ The **MCQ Generator App** is a MCQ generator app powered by a fine-tuned large l
 - After successfull MCQ generation, check the generated MCQs and click on the **Download generated MCQs** button to download the MCQs as **.txt** file.
 
 ## 📷 Screenshots
-![mcq_1](https://github.com/user-attachments/assets/ba80a96d-b3f1-4906-bf5b-48a62701ba7f)
-![mcq_2](https://github.com/user-attachments/assets/9f210a3b-2e58-410f-9aec-83cc1bc76045)
-![mcq_3](https://github.com/user-attachments/assets/369f94f9-cea1-4a8f-9241-dc8d82de352a)
-![mcq_4](https://github.com/user-attachments/assets/7cac003a-6213-4e0a-84e2-3e6afa67ee97)
+- ![mcq_1](https://github.com/user-attachments/assets/ba80a96d-b3f1-4906-bf5b-48a62701ba7f)
+- ![mcq_2](https://github.com/user-attachments/assets/9f210a3b-2e58-410f-9aec-83cc1bc76045)
+- ![mcq_3](https://github.com/user-attachments/assets/369f94f9-cea1-4a8f-9241-dc8d82de352a)
+- ![mcq_4](https://github.com/user-attachments/assets/7cac003a-6213-4e0a-84e2-3e6afa67ee97)
 
 
 
