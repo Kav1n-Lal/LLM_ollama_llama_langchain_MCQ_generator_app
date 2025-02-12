@@ -62,7 +62,6 @@ The **MCQ Generator App** is a MCQ generator app powered by a fine-tuned large l
 
 ## 📷 Screenshots
 - ![mcq_5](https://github.com/user-attachments/assets/88f37084-06b4-47e2-a5ab-3fc51195f49c)
-- ![mcq_2](https://github.com/user-attachments/assets/9f210a3b-2e58-410f-9aec-83cc1bc76045)
 - ![mcq_3](https://github.com/user-attachments/assets/369f94f9-cea1-4a8f-9241-dc8d82de352a)
 - ![mcq_4](https://github.com/user-attachments/assets/7cac003a-6213-4e0a-84e2-3e6afa67ee97)
 
