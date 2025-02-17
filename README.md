@@ -1,6 +1,6 @@
 # LLM_ollama_llama_langchain_MCQ_generator_app
 ## LLM Used-🦙 llama3.2:1b 🤖
-## Project Demonstation video-[https://drive.google.com/file/d/1Kza7HjUHABDCGKQHuE8ZNp4p6gk_-PQ3/view?usp=sharing]
+## Project Demonstation video-[https://drive.google.com/file/d/1XDC4IcIQVRXt-fMLmnkr_eUBvxrmobq-/view?usp=sharing]
 ## Overview
 The **MCQ Generator App** is a MCQ generator app powered by a fine-tuned large language model (LLM) known as *Llama3.2:1b* pulled from *OLLAMA*. This app takes a pdf file from the user and generates MCQs based on the **text extracted** from the pdf  and the **topic** entered by the user.
 
@@ -62,8 +62,7 @@ The **MCQ Generator App** is a MCQ generator app powered by a fine-tuned large l
 
 ## 📷 Screenshots
 ![m1](https://github.com/user-attachments/assets/54fb0818-7d44-4e2f-bc6a-fb2596caba47)
-![m2](https://github.com/user-attachments/assets/5106a0ea-07d6-4ad6-8dc2-d6583b654512)
-![m3](https://github.com/user-attachments/assets/b5c07fdb-d89b-45b8-8226-9582c80c990d)
+
 
 
 
